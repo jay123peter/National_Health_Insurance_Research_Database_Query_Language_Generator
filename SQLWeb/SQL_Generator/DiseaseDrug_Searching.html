@@ -1,0 +1,725 @@
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<title>NHRID_SQLGenerator</title>
+		<meta charset ="utf-8">
+		<!--Link jquery Library -->
+		<script src="js/jquery-2.1.4.js"></script>
+		<script src="js/jquery.canvasjs.min.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<!--control the device width of bootstrap-->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+		<link href="css/sticky-footer-divbar.css" rel="stylesheet">
+		<link href="css/font_noto.css" rel="stylesheet">
+		<link href="css/DiseaseDrugSearching_Background.css" rel="stylesheet">
+		
+		
+
+		 <script src="js/ZeroClipboard.js"></script>
+
+	</head>
+
+	<body>
+
+		<!--Top Index Line-->
+		<nav class="navbar navbar-default navbar-custom">
+			<nav class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<nav class="navbar-header">
+					<!--unknown code-->
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<!--using for narrow window , it can combine those button to one collection-->
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="./">SQL</a>
+				</nav>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class=""><a href="index.html">首頁<span class="sr-only">(current)</span></a></li>
+						<li class=""><a href="General_Searching.html">GeneralSearching<span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="DiseaseDrug_Searching.html">DiseaseDrugSearching<span class="sr-only">(current)</span></a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>Version_0725</li>
+					</ul>
+				</nav><!-- /.navbar-collapse -->
+			</nav><!-- /.container-fluid -->
+		</nav>
+
+		<!--=============================================================================== First Step Page Begin =============================================================================== -->
+		<!--Top Page-->
+		<div class="container-fluid" id="top_page">
+			<div class = "row">	
+				<div class="col-xs-12">
+					<h1></h1>
+				</div>
+			</div ><!-- /.row -->
+			<div class = "row" id = "Top_row">	
+				<div class="col-xs-12 divbar divbar-generaltop" >
+
+					<div class = "row">	<!--upside row-->	
+						<div class="col-xs-12">
+							<ul class="list-group">
+								<li class="list-group-item" style="background-color:#FFCC22">Choose Main Conditions</li>
+							</ul>
+						</div>
+					</div><!--upside row-->	
+
+					<div class = "row"><!--downside row-->
+						<div class = "col-xs-12">
+							<ul class="list-group row" id = "Choose_Server">
+								<li class="list-group-item col-xs-4">I. Choose Server :</li>
+								<form class="list-group-item col-xs-8" id="selectServer">
+									<input type="radio" name="server" value="z2202" checked>z2202
+									<input type="radio" name="server" value="dell8" style="margin:0px 0px 0px 20px">Dell8
+								</form>
+							</ul>
+						</div>
+						<div class = "col-xs-12">
+							<ul class="list-group row" id = "Choose_Year">
+								<li class="list-group-item col-xs-4" >II. Choose Year :</li>
+								<form class="list-group-item col-xs-8" id="selectYear">
+									<input type="radio" name="year" value="hi_2000" checked>2000(1996~2010)
+									<input type="radio" name="year" value="hi_2010" style="margin:0px 0px 0px 20px">2010(1996~2010)
+									<input type="radio" name="year" value="hi_2013" style="margin:0px 0px 0px 20px">2013(2002~2010)
+									<input type="radio" name="year" value="hi_2013all" style="margin:0px 0px 0px 20px">2013(1996~2013)
+								</form>
+							</ul>
+						</div>
+						<div class = "col-xs-12">
+							<ul class="list-group row" id = "Choose_Columns">
+								<li class="list-group-item col-xs-4">III. Choose Columns :</li>
+								<form class="list-group-item col-xs-8" id="selectMainCondition">
+									<!--<label class = "checkbox-inline"><input type="checkbox" name="column" value="sex" checked>Sex</label> 
+									<label class = "checkbox-inline"><input type="checkbox" name="column" value="birthday" checked>Birthday</label> -->
+									<label class = "checkbox-inline"><input type="checkbox" name="column" value="area" checked>Area</label>
+									<label class = "checkbox-inline"><input type="checkbox" name="column" value="ins_amt" checked>Ins_amt</label>
+									<label class = "checkbox-inline"><input type="checkbox" name="column" value="stardardDisease">CCI_StandardDisease</label>
+								</form>
+							</ul>
+						</div>
+					</div><!--downside row-->	
+
+				</div><!-- /.md-12 -->
+			</div ><!-- /.row -->
+		</div><!--Container-->
+
+		<!--Main Page-->
+		<div class="container-fluid" id="main_page">
+			<div class = "row">	
+				<div class="col-xs-12">
+					<h1> </h1>
+				</div>
+			</div ><!-- /.row -->
+			<div class = "row" id="Main_row">	
+				<div class="col-xs-12 divbar divbar-generalmainpage" >
+					<!--Title-->	
+					<div class = "row">		
+						<div class="col-xs-12">
+							<ul class="list-group">
+								<li class="list-group-item" style="background-color:#FFCC22">Click Plus To Add Your Conditions</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class = "row">	
+
+						<!--Main Area-->
+						<div class = "col-xs-12">
+							<ul class="list-group row" id = "condition_place">
+								<!--Condition Put in Here-->
+							</ul>
+						</div>
+
+						<!--Plus Button-->
+						<div class = "col-xs-12">
+							<ul class="list-group">
+								<li class="list-group-item glyphicon glyphicon-plus-sign" style="background:none;border:none" data-toggle="modal" data-target="#DiseaseDrugModal"></li>
+							</ul>
+						</div>
+					</div>
+				</div><!--div Main page-->
+			</div ><!-- /.row -->
+		</div><!--Container-->
+
+		<div class="container-fluid" style = "margin:20px auto" id="buildSQL_btn">
+			<div class = "row">	
+				<button class ="col-xs-6 col-xs-offset-3 btn" style = "border:double;border-color:#77FFEE;background:#FF8800;border-radius: 12px;" onclick = "buildSQL()">Build Your SQL</button>
+			</div ><!-- /.row -->
+		</div><!--Container-->
+
+
+		<div id = "DiseaseDrugModal" class ="modal fade" role = "dialog"><!--Pop Choosing modal Container start-->
+			<div class = "modal-dialog"> <!--sets the proper width and margin of the modal-->
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Click Button To Add the Condition</h4>
+					</div>
+					<div class="modal-body container-fluid">
+						<div class = "row">
+							<button style = "width:100%;background-color: white; color: black;border: 2px solid black;border-radius: 12px;">Standard Input</button>
+						</div>
+						<div class = "row">
+							<div class = "label col-xs-4 col-xs-offset-2">
+									<button type="button" class="btn btn-sq-lg btn-info" onclick="Add_conditionbar(1)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">門診檔病碼(CD)</button>
+							</div>
+							<div class = "label col-xs-4">
+									<button type="button" class="btn btn-sq-lg btn-info" onclick="Add_conditionbar(2)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">門診檔藥碼(OO)</button>
+							</div>
+						</div>
+						<div class = "row">
+							<div class = "label col-xs-4 col-xs-offset-2">
+									<button type="button" class="btn btn-sq-lg btn-info" onclick="Add_conditionbar(3)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">住院檔病碼(DD)</button>
+							</div>
+							<div class = "label col-xs-4">
+									<button type="button" class="btn btn-sq-lg btn-info" onclick="Add_conditionbar(4)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">住院檔藥碼(DO)</button>
+							</div>
+						</div>
+						<div class = "row">
+							<button style = "width:100%;background-color: white; color: black;border: 2px solid black;border-radius: 12px;margin:10px 0px 0px 0px;">Target Disease Input</button>
+						</div>
+						<div class = "row">
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Myocardial_infarct</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Congestive_heart_failure</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Peripheral_vascular_disease</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Dementia</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Chronic_pulmonary_disease</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Connective_tissue_disease</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Ulcer_disease</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Mild_liver_disease</button>
+							</div>
+
+
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Diabetes</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Diabetes_with_endOrganDamage</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Moderate_or_severeRenal_disease</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Nonmetastatic_solid_tumor</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Leukemia</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Lymphoma_multiple_myeloma</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">Metastatic_tumor</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">AIDS</button>
+							</div>
+
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">dengue_fever</button>
+							</div>
+							<div class = "label col-xs-6">
+									<button type="button" class="btn btn-info" onclick="Add_StandardDiseaseBar(this.innerHTML)" style = "color:#FFFFFF;width:100%" data-dismiss="modal">asthma</button>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div><!--Pop Choosing modal Container end-->
+		<!--middle blank-->
+		<div id="test_div1">
+		</div>
+
+		<!--=============================================================================== Fisrst Step Page End  ======================================================================================= -->
+
+		<!--===============================================================================    Show SQL result    ======================================================================================= -->
+		<div id = "ShowSQLModal" class ="modal fade" role = "dialog"><!--Pop Choosing modal Container start-->
+			<div class = "modal-dialog modal-lg"> <!--sets the proper width and margin of the modal-->
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">SQL Result</h4>
+					</div>
+					<div class="modal-body container-fluid">
+						<div class = "row">
+							<pre class = "col-xs-12">
+								<span id ="build_sql_show" class = "font1">
+
+								</span>
+							</pre>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div><!--Pop Choosing modal Container end-->
+		<!--middle blank-->
+		<div id="test_div1">
+		</div>
+		<!--=============================================================================== Second Step Page Begin ======================================================================================= -->
+		<!--<pre class = "col-xs-12">
+					<span id ="build_sql_show" class = "font1"></span>
+				</pre>	-->
+		<div class="container-fluid" style = "display:none" id="SQL_page">
+			<div class = "row" >
+				<div class = "col-xs-12" id="copytext">
+					<h3>Your SQL has been generated, You can copy it with the Button !</h3>
+				</div>
+			</div>
+			<div class = "row" >
+				<div class = "col-xs-12" id="copybtn" >
+					<button  id="clipboard" class="btn" data-clipboard-target="build_sql_show" onclick ="copy_sql()" style ="width:30%;">
+							Click Me !
+					</button>
+				</div>
+			</div>
+			<div class = "row" >
+				<div class = "col-xs-12" id="directurl">
+					<h3>Go to <button id="directurl_url" style = "background:none;border:none;color:blue;" onclick = "guildtohue(this.innerHTML)"></button> and use the SQL now !</h3>
+				</div>
+			</div>
+		</div><!--Container-->
+
+		<div class="container-fluid" style = "display:none" id="AnalysisCheck_page">
+			<div class = "row" >
+				<div class = "col-xs-12"  id="AnalysisCheck_text">
+					<h3>If you want to use Analysis function, Please click this Button !</h3>
+				</div>
+			</div>
+			<div class = "row" >
+				<div class = "col-xs-12" id="AnalysisCheck_btn">
+					<div  class="btn"  id="AnalysisCheck_btn_start" onclick ="analysis_start()" style ="width:30%;">
+							Click Me To Start Analysis Function !
+					</div>
+					<img  src="image/ajax-loader.gif"  id="AnalysisCheck_btn_wait" style ="display:none;"></img>
+				</div>
+			</div>
+		</div><!--Container-->
+
+		<div class="container-fluid" style = "display:none" id="Analysis_page">
+			<div class = "row" >
+				<div class = "col-xs-12" id="Analysis_text" style="border:outset;border-radius: 1px;">
+					<h3>Analysis  Function</h3>
+				</div>
+			</div>
+			<div class = "row" >
+				<div class = "col-xs-1" style="height:600px;">
+					<div class = "row" >
+						<button  class="btn" style ="width:100%;height:120px;color:#FFFFFF;background:#FF8800; border:outset;border-radius: 1px;" id="Basic_btn" onclick ="analysis_functionbtn(this.id,this.innerHTML)">Basic
+						</button>						
+					</div>
+					<div class = "row" >
+						<button class="btn" style ="width:100%;height:120px;color:#FFFFFF;background:#00DDDD;border:outset;border-radius: 1px;" id="All_btn" onclick ="analysis_functionbtn(this.id,this.innerHTML)">All
+						</button>	
+					</div>
+					<div class = "row" >
+						<button class="btn" style ="width:100%;height:120px;color:#FFFFFF;background:#00DDDD;border:outset;border-radius: 1px;" id="Sex_btn"onclick ="analysis_functionbtn(this.id,this.innerHTML)">Sex
+						</button>	
+					</div>
+					<div class = "row" >
+						<button class="btn" style ="width:100%;height:120px;color:#FFFFFF;background:#00DDDD;border:outset;border-radius: 1px;" id="Age_btn" onclick ="analysis_functionbtn(this.id,this.innerHTML)">Age
+						</button>							
+					</div>
+					<div class = "row" >
+						<button class="btn" style ="width:100%;height:120px;color:#FFFFFF;background:#00DDDD;border:outset;border-radius: 1px;" id="Relation_btn" onclick ="analysis_functionbtn(this.id,this.innerHTML)">Relation
+						</button>							
+					</div>
+				</div>
+
+				<div class = "col-xs-11" style = "height:600px;background:#DDDDDD">
+					<!--***************************** analysis_Basic ******************************************-->
+					<div class = "row" id="analysis_Basic">
+						<div  class = "col-xs-12">
+							<!--Top Option & Generate Button-->
+							<div class = "row" style = "height:150px;">
+								<div class = "col-xs-12">
+									<!--Target & Generate Button-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											I. Target
+										</li>
+										<form class = "col-xs-3 list-group-item">
+											<select name="Target" id="basic_select">
+											    <option value="icddrug">疾病/藥物人數</option>
+												<option value="sex">性別分布</option>
+												<option value="age">年齡分布</option>
+																								
+											</select>
+										</form>
+										<button class = "col-xs-2  col-xs-offset-1 btn" onclick="basic_chart()">
+											Generate
+										</button>
+									</ul>
+
+								</div>
+							</div>
+							<!--Chart Container-->
+							<div class = "row" style = "border-top:solid;height:450px;">
+								<div class = "col-xs-10 col-xs-offset-1" id = "chartContainer_basic"></div>
+							</div>
+						</div><!--col 12-->
+					</div><!--Basic Row-->
+					<!--*************************************************************************************-->
+					<!--***************************** analysis_All ******************************************-->
+					<div class = "row" id="analysis_All" style="display:none;">
+						<div  class = "col-xs-12">
+							<!--Top Option & Generate Button-->
+							<div class = "row" style = "height:150px;">
+								<div class = "col-xs-12">
+									<!--X Axis-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											I. X-Axis
+										</li>
+										<form class = "col-xs-3  list-group-item" >
+											<select id = "All_xasixSelect" name="X_Axis" onchange="change_Xaxis(this.id)">
+												<option value="Age">以年齡為X軸</option>
+												<option value="Year">以罹患日為X軸</option>
+											</select>
+										</form>
+										<li class = "col-xs-1 list-group-item">
+											<label style = "width:100%;">Range</label>
+										</li>
+										<form class = "col-xs-1 list-group-item">
+											<select name="X_Axis_age" id= "All_limitPrev" style = "width:100%;">
+												<option value="0">0-9</option>
+												<option value="1">10-19</option>
+												<option value="2">20-29</option>
+												<option value="3">30-39</option>
+												<option value="4">40-49</option>
+												<option value="5">50-59</option>
+												<option value="6">60-69</option>
+												<option value="7">70-79</option>
+												<option value="8">80-89</option>
+												<option value="9">90-99</option>
+											</select>
+										</form>
+										<li class = "col-xs-1 list-group-item">
+											<label style = "width:100%;">~</label>
+										</li>
+										<form class = "col-xs-1 list-group-item">
+											<select name="X_Axis_age" id= "All_limitNext" style = "width:100%;">
+												<option value="0">0-9</option>
+												<option value="1">10-19</option>
+												<option value="2">20-29</option>
+												<option value="3">30-39</option>
+												<option value="4">40-49</option>
+												<option value="5">50-59</option>
+												<option value="6">60-69</option>
+												<option value="7">70-79</option>
+												<option value="8">80-89</option>
+												<option value="9" selected>90-99</option>
+											</select>
+										</form>
+									</ul>
+									<!--Y Axis-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											II. Y-Axis
+										</li>
+										<form class = "col-xs-3 list-group-item" >
+											<select name="Y_Axis" id = "All_yasixSelect">
+												<option value="percent">以比例(人數/全部人數)為Y軸</option>
+												<option value="real" selected>以實際人數為Y軸</option>
+											</select>
+										</form>
+									</ul>
+									<!--Target & Generate Button-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											III. Target
+										</li>
+										<form class = "col-xs-3 list-group-item">
+											<select name="Target" id="All_target">
+
+											</select>
+										</form>
+										<button class = "col-xs-2  col-xs-offset-1 btn" onclick="all_chart()">
+											Generate
+										</button>
+									</ul>
+
+								</div>
+							</div>
+							<!--Chart Container-->
+							<div class = "row" style = "border-top:solid;height:450px;">
+								<div class = "col-xs-10 col-xs-offset-1" id = "chartContainer_all"></div>
+							</div>
+						</div><!--col 12-->
+					</div><!--All Row-->
+					<!--*************************************************************************************-->
+					<!--***************************** analysis_Sex ******************************************-->
+					<div class = "row" id="analysis_Sex" style="display:none;">
+						<div  class = "col-xs-12">
+							<!--Top Option & Generate Button-->
+							<div class = "row" style = "height:150px;">
+								<div class = "col-xs-12">
+									<!--X Axis-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											I. X-Axis
+										</li>
+										<form class = "col-xs-3  list-group-item" >
+											<select id = "Sex_xasixSelect" name="X_Axis" onchange="change_Xaxis(this.id)">
+												<option value="Age">以年齡為X軸</option>
+												<option value="Year">以罹患日為X軸</option>
+											</select>
+										</form>
+										<li class = "col-xs-1 list-group-item">
+											<label style = "width:100%;">Range</label>
+										</li>
+										<form class = "col-xs-1 list-group-item">
+											<select name="X_Axis_age" id= "Sex_limitPrev" style = "width:100%;">
+												<option value="0">0-9</option>
+												<option value="1">10-19</option>
+												<option value="2">20-29</option>
+												<option value="3">30-39</option>
+												<option value="4">40-49</option>
+												<option value="5">50-59</option>
+												<option value="6">60-69</option>
+												<option value="7">70-79</option>
+												<option value="8">80-89</option>
+												<option value="9">90-99</option>
+											</select>
+										</form>
+										<li class = "col-xs-1 list-group-item">
+											<label style = "width:100%;">~</label>
+										</li>
+										<form class = "col-xs-1 list-group-item">
+											<select name="X_Axis_age" id= "Sex_limitNext" style = "width:100%;">
+												<option value="0">0-9</option>
+												<option value="1">10-19</option>
+												<option value="2">20-29</option>
+												<option value="3">30-39</option>
+												<option value="4">40-49</option>
+												<option value="5">50-59</option>
+												<option value="6">60-69</option>
+												<option value="7">70-79</option>
+												<option value="8">80-89</option>
+												<option value="9" selected>90-99</option>
+											</select>
+										</form>
+									</ul>
+									<!--Y Axis-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											II. Y-Axis
+										</li>
+										<form class = "col-xs-3 list-group-item" >
+											<select name="Y_Axis" id = "Sex_yasixSelect">
+												<option value="percent">以比例(人數/全部人數)為Y軸</option>
+												<option value="real" selected>以實際人數為Y軸</option>
+											</select>
+										</form>
+									</ul>
+									<!--Target & Generate Button-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											III. Target
+										</li>
+										<form class = "col-xs-3 list-group-item">
+											<select name="Target" id="Sex_target">
+
+											</select>
+										</form>
+										<button class = "col-xs-2  col-xs-offset-1 btn" onclick="sex_chart()">
+											Generate
+										</button>
+									</ul>
+
+								</div>
+							</div>
+							<!--Chart Container-->
+							<div class = "row" style = "border-top:solid;height:450px;">
+								<div class = "col-xs-10 col-xs-offset-1" id = "chartContainer_sex"></div>
+							</div>
+						</div><!--col 12-->
+					</div><!--Sex Row-->
+					<!--*************************************************************************************-->
+					<!--***************************** analysis_Age ******************************************-->
+					<div class = "row" id="analysis_Age" style="display:none;">
+						<div  class = "col-xs-12">
+							<!--Top Option & Generate Button-->
+							<div class = "row" style = "height:150px;">
+								<div class = "col-xs-12">
+									<!--X Axis-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											I. X-Axis
+										</li>
+										<form class = "col-xs-3  list-group-item" >
+											<select id = "Age_xasixSelect" name="X_Axis" onchange="change_Xaxis(this.id)">
+												<option value="Year">以罹患日為X軸</option>
+											</select>
+										</form>
+										<li class = "col-xs-1 list-group-item">
+											<label style = "width:100%;">Range</label>
+										</li>
+										<form class = "col-xs-1 list-group-item">
+											<select name="X_Axis_age" id= "Age_limitPrev" style = "width:100%;">
+												<option value='1996' selected>1996</option>
+												<option value='1997'>1997</option>
+												<option value='1998'>1998</option> 
+												<option value='1999'>1999</option> 
+												<option value='2000'>2000</option> 
+												<option value='2001'>2001</option> 
+												<option value='2002'>2002</option> 
+												<option value='2003'>2003</option> 
+												<option value='2004'>2004</option> 
+												<option value='2005'>2005</option> 
+												<option value='2006'>2006</option>
+												<option value='2007'>2007</option> 
+												<option value='2008'>2008</option> 
+												<option value='2009'>2009</option> 
+												<option value='2010'>2010</option>
+												<option value='2011'>2011</option>
+												<option value='2012'>2012</option>
+												<option value='2013'>2013</option>
+											</select>
+										</form>
+										<li class = "col-xs-1 list-group-item">
+											<label style = "width:100%;">~</label>
+										</li>
+										<form class = "col-xs-1 list-group-item">
+											<select name="X_Axis_age" id= "Age_limitNext" style = "width:100%;">
+												<option value='1996'>1996</option>
+												<option value='1997'>1997</option>
+												<option value='1998'>1998</option> 
+												<option value='1999'>1999</option> 
+												<option value='2000'>2000</option> 
+												<option value='2001'>2001</option> 
+												<option value='2002'>2002</option> 
+												<option value='2003'>2003</option> 
+												<option value='2004'>2004</option> 
+												<option value='2005'>2005</option> 
+												<option value='2006'>2006</option>
+												<option value='2007'>2007</option> 
+												<option value='2008'>2008</option> 
+												<option value='2009'>2009</option> 
+												<option value='2010'>2010</option>
+												<option value='2011'>2011</option>
+												<option value='2012'>2012</option>
+												<option value='2013' selected>2013</option>
+											</select>
+										</form>
+									</ul>
+									<!--Y Axis-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											II. Y-Axis
+										</li>
+										<form class = "col-xs-3 list-group-item" >
+											<select name="Y_Axis" id = "Age_yasixSelect">
+												<option value="percent">以比例(人數/全部人數)為Y軸</option>
+												<option value="real" selected>以實際人數為Y軸</option>
+											</select>
+										</form>
+									</ul>
+									<!--Target & Generate Button-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											III. Target
+										</li>
+										<form class = "col-xs-3 list-group-item">
+											<select name="Target" id="Age_target">
+
+											</select>
+										</form>
+										<button class = "col-xs-2  col-xs-offset-1 btn" onclick="age_chart()">
+											Generate
+										</button>
+									</ul>
+
+								</div>
+							</div>
+							<!--Chart Container-->
+							<div class = "row" style = "border-top:solid;height:450px;">
+								<div class = "col-xs-10 col-xs-offset-1" id = "chartContainer_age"></div>
+							</div>
+						</div><!--col 12-->				
+					</div><!--Age Row-->
+					<!--*************************************************************************************-->
+					<!--***************************** analysis_Relation *************************************-->
+					<div class = "row" id="analysis_Relation" style="display:none;">
+						<div  class = "col-xs-12">
+							<!--Top Option & Generate Button-->
+							<div class = "row" style = "height:150px;">
+								<div class = "col-xs-12">
+									<!--Target & Generate Button-->
+									<ul class = "row list-group" >
+										<li class = "col-xs-2 col-xs-offset-1 list-group-item" >
+											I. Target
+										</li>
+										<form class = "col-xs-3 list-group-item">
+											<select name="Target" id="Relation_target">
+
+											</select>
+										</form>
+										<button class = "col-xs-2  col-xs-offset-1 btn" onclick="relation_chart()">
+											Generate
+										</button>
+									</ul>
+
+								</div>
+							</div>
+							<!--Chart Container-->
+							<div class = "row" style = "border-top:solid;height:450px;">
+								<div class = "col-xs-6" id = "chartContainer_relation_left_border">
+									<div id = "chartContainer_relation_left"></div>
+								</div>
+								<div class = "col-xs-6" id = "chartContainer_relation_right_border">
+									<div id = "chartContainer_relation_right"></div>
+								</div>
+							</div>
+						</div><!--col 12-->
+					</div>
+					<!--*************************************************************************************-->
+				</div><!--col 11 outside-->
+			</div><!--Row oudside-->
+		</div><!--Container-->
+		<textarea class="row" id="build_sql" style = "display:none;" > <!--style = "display:none"*-->
+		</textarea>
+		<script type="text/javascript" src="js/DiseaseDrugSearching.js"></script>
+		<script type="text/javascript" src="js/StandardDiseaseTable.js"></script>
+		<script type="text/javascript" src="js/Analysis_Function.js"></script>
+		<script type="text/javascript" src="js/WebSocket.js"></script>
+	</body>
+	</html>

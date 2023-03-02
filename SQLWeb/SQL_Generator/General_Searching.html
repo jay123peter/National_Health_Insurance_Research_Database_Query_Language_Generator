@@ -1,0 +1,385 @@
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<title>NHRID_SQLGenerator</title>
+		<meta charset ="utf-8">
+		<!--Link jquery Library -->
+		<script src="js/jquery-2.1.4.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<!--control the device width of bootstrap-->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+		<link href="css/sticky-footer-divbar.css" rel="stylesheet">
+		<link href="css/font_noto.css" rel="stylesheet">
+		<link href="css/GeneralSearching_Background.css" rel="stylesheet">
+		
+
+		 <script src="js/ZeroClipboard.js"></script>
+
+	</head>
+
+	<body>
+
+		
+		<nav class="navbar navbar-default navbar-custom">
+			<nav class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<nav class="navbar-header">
+					<!--unknown code-->
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<!--using for narrow window , it can combine those button to one collection-->
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="./">SQL</a>
+				</nav>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class=""><a href="index.html">首頁<span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="General_Searching.html">GeneralSearching<span class="sr-only">(current)</span></a></li>
+						<li class=""><a href="DiseaseDrug_Searching.html">DiseaseDrugSearching<span class="sr-only">(current)</span></a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>Version_0725</li>
+					</ul>
+				</nav><!-- /.navbar-collapse -->
+			</nav><!-- /.container-fluid -->
+		</nav>
+		<!--Progress Container-->
+		<div class="container-fluid">
+			<div class = "row">	
+				<div class="col-xs-12">
+					<h1> </h1>
+				</div>
+			</div ><!-- /.row -->
+			<div class = "row">	
+				<div class="col-xs-12 divbar divbar-generaltop">
+					<div class = "row">	
+						<div class="col-xs-2">
+							<ul class="list-group">
+								<li class="list-group-item">Choose Server&Year </li>
+								<li id="server_text" class="list-group-item">&ltNothing Set&gt</li>
+							</ul>
+						</div>
+						<div class="col-xs-1">
+							<span class="glyphicon glyphicon-play"></span>
+						</div>
+						<div class="col-xs-2">
+							<ul class="list-group">
+								<li class="list-group-item">Choose Tables</li>
+								<li id="table_text" class="list-group-item">&ltNothing Set&gt</li>
+							</ul>
+						</div>
+						<div class="col-xs-1">
+							<span class="glyphicon glyphicon-play"></span>
+						</div>
+						<div class="col-xs-2">
+							<ul class="list-group">
+								<li class="list-group-item">Choose Column</li>
+								<li id="column_text" class="list-group-item">&ltNothing Set&gt</li>
+							</ul>
+						</div>
+						<div class="col-xs-1">
+							<span class="glyphicon glyphicon-play"></span>
+						</div>
+						<div class="col-xs-3">
+							<ul class="list-group">
+								<li class="list-group-item">Set Conditions</li>
+								<li id="condition_text" class="list-group-item">&ltNothing Set&gt</li>
+							</ul>
+						</div>
+						
+					</div><!--inside row-->	
+				</div><!-- /.md-12 -->
+			</div ><!-- /.row -->
+		</div><!--Container-->
+
+
+		<!--middle blank-->
+		<div>
+			<h1> </h1>
+		</div>
+
+		<!--Choose Container-->
+		<div class="container-fluid" id = "choose_container">
+			<div class = "row">	
+				<div class="col-xs-12">
+					<h1> </h1>
+				</div>
+			</div>
+			<div class = "row">	
+				<div class="col-xs-12 divbar divbar-generalmainpage" >
+					<!--first_step choose_server&year-->
+					<div class="row" id = "server_row">
+						<ul class="col-xs-2 col-xs-offset-3 list-group">
+							<li class="list-group-item">Choose Server</li>
+							<li id="table_row_text" class="list-group-item">
+								<div class="btn-group-vertical">
+									<button id="z2202_button" type="button" class="btn btn-primary" onclick="check_server_click(this.id)" value="0">z2202</button>
+									<button id="dell8_button" type="button" class="btn btn-primary" onclick="check_server_click(this.id)" value="0">dell8</button>
+								</div>
+							</li>
+						</ul>
+						<div class="row" id = "year_row">
+							<ul class="col-xs-5 col-xs-offset-1 list-group">
+								<li class="list-group-item">Choose Year</li>
+								<li id="table_row_text" class="list-group-item">
+									<div class="btn-group-vertical">
+										<button id="hi_2000_button" type="button" class="btn btn-primary" onclick="check_year_click(this.id)" value="0">2000(1996~2010)</button>
+										<button id="hi_2010_button" type="button" class="btn btn-primary" onclick="check_year_click(this.id)" value="0">2010(1996~2010)</button>
+										<button id="hi_2013_button" type="button" class="btn btn-primary" onclick="check_year_click(this.id)" value="0">2013(2002~2013)</button>
+										<button id="hi_2013all_button" type="button" class="btn btn-primary" onclick="check_year_click(this.id)" value="0">2013(1996~2013)</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class = "row" id = "server_year_button">
+						<div class = "col-xs-12">
+							<button  type="button" class="btn btn-submit" onclick="choose_server_year_next()" style="width:40%;display:block;margin:0 auto;">
+								Next
+							</button>
+						</div>
+					</div>
+					<!--first_step end-->
+
+					<!--second_step choose_tables-->
+					<div class="row" id = "table_row" style="display:none;">
+						<ul class="col-xs-12 list-group">
+							<li class="list-group-item">Choose Tables</li>
+							<li id="table_row_text" class="list-group-item">
+								<div class="btn-group-vertical">
+									<button id="cd_button" type="button" class="btn btn-primary" onclick="check_table_click(this.id)" value="0">cd</button>
+									<button id="oo_button" type="button" class="btn btn-primary" onclick="check_table_click(this.id)" value="0" style="display:none">oo</button>
+									<button id="dd_button" type="button" class="btn btn-primary" onclick="check_table_click(this.id)" value="0">dd</button>
+									<button id="do_button" type="button" class="btn btn-primary" onclick="check_table_click(this.id)" value="0" style="display:none">do</button>
+									<button id="id98_button" type="button" class="btn btn-primary" onclick="check_table_click(this.id)" value="0">id98</button>
+									<button id="id99_button" type="button" class="btn btn-primary" onclick="check_table_click(this.id)" value="0">id99</button>
+								</div>
+							</li>
+						</ul>
+					</div>	
+					<div class = "row" id = "table_button" style="display:none">
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button type="button" class="btn btn-submit"  onclick="choose_table_prev()" style ="width:100%;">
+								Prev
+							</button>
+						</div>
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button  type="button" class="btn btn-submit"  onclick="choose_table_next()" style ="width:100%;">
+								Next
+							</button>
+						</div>
+						<div class = "col-xs-2">
+							<h1></h1>
+						</div>
+
+					</div>
+					<!--second_step end-->
+
+					<!--third_step choose columns-->
+					<div class="row" id = "column_row" style="display:none;">
+						<ul class="col-xs-3 list-group" style = "float:left;background:white;">
+							<li class="list-group-item" ">Tables</li>
+							<li id="table_row_text" class="list-group-item">
+								<div class="btn-group-vertical" id="columnpage_tables" >
+								</div>
+							</li>
+						</ul>
+						
+						<ul class="col-xs-9 list-group" style = "float:right;background:orange;">
+							<li class="list-group-item" ">Columns</li>
+							<li class="list-group-item" id="columnpage_columns">
+								
+							</li>
+						</ul>
+					</div>
+					<div class = "row" id="column_button" style ="display:none;">
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "column_button_prev" type="button" class="btn btn-submit" onclick = "choose_column_prev()" style ="width:100%;">
+								Prev
+							</button>
+						</div>
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "column_button_next" type="button" class="btn btn-submit" onclick = "choose_column_next()" style ="width:100%;">
+								Next
+							</button>
+						</div>
+						<div class = "col-xs-2">
+							<h1></h1>
+						</div>
+					</div>
+					<!--third_step end-->
+
+					<!--Fourth_Step set conditions-->
+						<!-- 4-1 choose conditions start-->
+					<div class="row" id="condition_row" style="display:none;">
+						<ul class="col-xs-12 list-group" id="condition_place" style = "background:#00FFFF;">
+						</ul>
+						<ul class="col-xs-12 list-group" style = "background:#00FFFF;">
+							<li class="list-group-item glyphicon glyphicon-plus" id="condition_plus" onclick = "Add_conditions_transferpage()"></li>
+						</ul>
+						
+					</div>
+					<div class = "row" id="condition_button" style ="display:none;">
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "condition_button_prev" type="button" class="btn btn-submit" onclick = "choose_condition_prev()" style ="width:100%;">
+								Prev
+							</button>
+						</div>
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "condition_button_next" type="button" class="btn btn-submit" onclick = "choose_condition_next()" style ="width:100%;">
+								Next
+							</button>
+						</div>
+						<div class = "col-xs-2">
+							<h1></h1>
+						</div>
+					</div>
+						<!-- 4-1 choose conditions end-->
+
+						<!-- 4-2 conditions and or set start-->
+							<!--show remaining conditions-->
+					<div class="row" id="condition_remain_row" style="display:none;">
+						<ul class="col-xs-12 list-group">
+							<li class="list-group-item">Remaining Conditions</li>
+							<li class="list-group-item row" id="condition_remaining"></li>
+							
+						</ul>
+					</div>
+							<!--set condition group , and or -->
+					<div class="row" id="condition_classification_row" style="display:none;">
+						<ul class="col-xs-12 list-group">
+							<li class="list-group-item">Setting Conditions AND / OR</li>
+						</ul>
+						<ul class="col-xs-12 list-group" id="condition_group_add">	
+						</ul>
+						<ul class="col-xs-12 list-group">
+							<li class="list-group-item glyphicon glyphicon-plus" id="condition_group_plus" onclick = "condition_group_plus()"></li>
+						</ul>
+						
+					</div>
+							<!--prev next button -->
+					<div class = "row" id="condition_andor_button" style ="display:none;">
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "condition_andor_prev" type="button" class="btn btn-submit" onclick = "condition_andor_prev()" style ="width:100%;">
+								Prev
+							</button>
+						</div>
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "condition_andor_next" type="button" class="btn btn-submit" onclick = "condition_andor_next()" style ="width:100%;">
+								Next
+							</button>
+						</div>
+						<div class = "col-xs-2">
+							<h1></h1>
+						</div>
+					</div>
+
+					<!--choose condition into group-->
+					<div class="row" id="condition_choosegroup" style="display:none;">
+						<ul class="col-xs-12 list-group">
+							<li class="list-group-item">Choose Conditions</li>
+							<li class="list-group-item btn-group-vertical row" id="condition_choosegroup_addbtn" >
+								
+							</li>
+						</ul>
+					</div>
+					<div class = "row" id="condition_choosegroup_button" style ="display:none;">
+						<div class = "col-xs-12">
+							<button id = "column_button_prev" type="button" class="btn btn-submit" onclick = "condition_choosegroup_check()" style ="width:100%;">
+								Click To Create A Group
+							</button>
+						</div>
+					</div>
+						<!-- 4-2 conditions and or set end-->
+
+						<!-- 4-3 conditions group by order by-->
+						<!--set columns groupby -->
+					<div class="row" id="condition_groupby" style="display:none;">
+						<ul class="col-xs-12 list-group">
+							<li class="list-group-item">Accept duplicate data ?</li>
+							<li class="list-group-item row">
+								<button class = "btn btn-primary col-xs-12"  id="duplicate_yes" onclick="check_groupby(this.id)" value="0" >Yes</button>
+								<button class = "btn btn-primary col-xs-12"  id="duplicate_no" onclick="check_groupby(this.id)" value="0" >No &ltSuggest Option&gt</button>
+							</li>
+							
+							
+						</ul>
+					</div>
+							<!--set columns orderby -->
+					<div class="row" id="condition_orderby" style="display:none;">
+						<ul class="col-xs-12 list-group" id="ordering_ul">
+							<li class="list-group-item">Setting Ordering</li>
+						</ul>
+						
+					</div>
+							<!--prev next button -->
+					<div class = "row" id="condition_orderby_button" style="display:none;">
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "condition_orderby_prev" type="button" class="btn btn-submit" onclick = "condition_orderby_prev()" style ="width:100%;">
+								Prev
+							</button>
+						</div>
+						<div class = "col-xs-3 col-xs-offset-2">
+							<button id = "condition_orderby_next" type="button" class="btn btn-submit" onclick = "build_sql()" style ="width:100%;">
+								Build Your SQL
+							</button>
+						</div>
+						<div class = "col-xs-2">
+							<h1></h1>
+						</div>
+					</div>
+							<!-- 4-3 conditions group by order by end-->
+					<!--Fourth_step end-->
+
+					<!--5 Build_SQL page Begin-->
+					<div class="row" id="build_sql" style="display:none;">
+						<pre class = "col-xs-12">
+							<span id ="build_sql_show" class = "font1">
+
+							</span>
+						</pre>
+						
+					</div>
+					<div class = "row" id="copy_sql" style ="display:none;">
+						<div class = "col-xs-12">
+							<button  id="clipboard" class="btn btn-submit" data-clipboard-target="#build_sql_show" onclick ="copy_sql()" style ="width:100%;border:solid">
+								Click To Copy
+							</button>
+						</div>
+					</div>
+					<div class = "row" id = "direct_to_server" style = "display:none; height: 100%;width:100%;vertical-align:middle;padding:10px 0px 0px 0px">
+						<div class = "col-xs-12" style = "text-align:center;">
+							<h3>Go to <button id="direct_to_server_url" style = "background:none;border:none;color:blue;" onclick = "guildtohue(this.innerHTML)"></button> and use the SQL now !</h3>
+						</div>
+					</div>
+					<!--5 Build_SQL page End-->
+				</div><!-- /.md-12 -->
+			</div ><!-- /.row outside-->
+		</div><!--Container-->
+		<textarea class="row" id="copySQLArea" style = "display:none;"></textarea>
+		<!--<div id="test_div1"></div>
+		<div id="test_div2"></div>-->
+		<script type="text/javascript" src="js/HealthcareTable.js"></script>
+		<script type="text/javascript" src="js/GeneralSearching.js"></script>
+		<script type="text/javascript" src="js/WebSocket.js"></script>
+
+		</body>
+
+
+
+		</html>

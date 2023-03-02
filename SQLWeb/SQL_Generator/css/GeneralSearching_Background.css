@@ -1,0 +1,260 @@
+.divbar-generaltop{
+	background-color:#00bbaa;
+  color:#111111;
+  border:solid;
+  border-radius:10px;
+  padding:20px 0px 0px 0px;
+}
+.divbar-generaltop .col-xs-2 > ul >li.list-group-item  ,.col-xs-3 > ul > li.list-group-item {
+  color:black;
+  background-color:green;  
+  text-align:center;
+
+}
+.divbar-generaltop .col-xs-2 > ul > #server_text,.col-xs-2 > ul > #table_text  ,.col-xs-2 > ul > #column_text ,.col-xs-3 > ul > #condition_text  {
+  text-align:center; 
+  background-color:white;
+}
+.divbar-custom {
+	
+}
+/*Necessary if want to change background color*/
+.divbar-custom .divbar-div > li.active {
+  background: #cccccc;
+}
+/*Normal stat active option*/
+.divbar-custom .divbar-div > li.active > a{
+  color: black;
+  background: transparent;
+}
+/*Mouse in active option*/
+.divbar-custom .divbar-div > li.active > a:hover, .divbar-div > li.active > a:focus {
+ color:orange;
+ background: transparent;
+ 
+}
+/*Normal stat non-active option*/
+.divbar-custom .divbar-div > li > a {
+ color:#000000;
+}
+/*Mouse in non-active option*/
+.divbar-custom .divbar-div > li > a:hover, .div > li > a:focus {
+  background-color: #bbbbbb;
+}
+
+/*arrow css*/
+.glyphicon-play{
+  font-size: 60px; 
+  color: #FFFF77;
+  display: table;/*Horizontal middle set*/
+  margin: 0 auto;
+
+}
+.divbar-generaltop .col-xs-1 {
+  margin:10px 0px 0px 0px;
+  vertical-align: middle;
+}
+
+/*main page design*/
+.divbar-generalmainpage{
+  background-color:#00FFFF;
+  border-radius:10px;
+  padding:20px 0px 20px 0px;
+  border:solid;
+}
+.divbar-generalmainpage .row {
+  width:60%;
+  display:block;margin:0 auto;
+  vertical-align:middle;
+  padding:0px 0px 0px 0px;
+}
+/*choose page & column design */
+.divbar-generalmainpage #column_row ,#condition_row,#condition_classification_row,#condition_choosegroup{
+  width:90%;
+  display:block;margin:0 auto;
+  vertical-align:middle;
+  padding:0px 0px 0px 0px;
+  }/*for column page & condition_row*/
+
+
+
+  .divbar-generalmainpage .row > ul {
+    padding:0px 0px 0px 0px;
+  }
+  .divbar-generalmainpage .row > ul > li.list-group-item{
+    color:black;
+    background-color:green;  
+    text-align:center;
+    margin:0px 0px 0px 0px;
+  }
+  .divbar-generalmainpage .row > ul > #table_row_text,.row > ul > #columnpage_columns{
+    text-align:center; 
+    background-color:white;
+    padding:0px 0px 0px 0px;
+  }
+  .divbar-generalmainpage .row> ul > #table_row_text > div ,.row> ul > #columnpage_columns > div {
+    width:100%;
+  }
+  .divbar-generalmainpage .row> ul > #table_row_text > div > button, .row> ul > #columnpage_columns > div > button{
+    border-color: green;
+  }
+  .divbar-generalmainpage .row> ul > #table_row_text > div > button:hover , .row> ul > #columnpage_columns> div > button:hover{
+    background: orange; 
+  }
+
+
+
+  /*choose condition design*/
+  /*first-part*/
+  .divbar-generalmainpage #condition_row > ul > #condition_plus{
+    font-size: 60px;
+    margin:0px 0px 0px 0px;
+    border: 0;
+    background:#00FFFF;
+  }
+  .divbar-generalmainpage #condition_row > ul > li.row{
+    height: 30px;
+    width:100%;
+    margin:0px 0px 10px 0px;
+    background: #DDDDDD;
+  }
+  .divbar-generalmainpage #condition_row > ul > li.row > div{
+    height: 100%;
+    border: solid;
+    background: #FFDD55; 
+
+    display: flex;/*set select text in middle*/
+    align-items: center;
+    justify-content: center;
+  }
+
+  .divbar-generalmainpage #condition_row > ul > li.row > form {
+    height: 100%;
+    padding: :0px 0px 0px 0px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+ .divbar-generalmainpage #condition_row > ul > li.row > label{
+    height: 100%;
+    margin:0px 0px 0px 0px;
+    vertical-align:middle;
+    cursor:pointer;
+    display: inline-block;
+  }
+
+  .divbar-generalmainpage #condition_row > ul > li.row > form > input{
+    height: 100%;
+    width:100%;
+    margin:0px 0px 0px 0px;
+  }
+
+  .divbar-generalmainpage #condition_row > ul > li.row > button {
+    height: 100%;
+    vertical-align: middle;
+    float:right;
+  }
+  select {
+    height: 100%;
+    background-color:#FFDD55;
+    text-align-last:center;
+    border: solid;
+  }
+  /*second part*/
+  .divbar-generalmainpage #condition_remain_row{
+    width:60%;
+    display:block;
+    margin:0px auto 20px auto;
+    vertical-align:middle;
+    padding:0px 0px 0px 0px;
+  }
+  .divbar-generalmainpage #condition_remain_row > ul > li.row{
+    width:100%;
+    height: 100%;
+  }
+  .divbar-generalmainpage #condition_classification_row > ul > #condition_group_plus{
+    font-size: 60px;
+    margin:0px 0px 0px 0px;
+    border: 0;
+    background: #00FFFF;
+  }
+  .divbar-generalmainpage ,#condition_classification_row > ul {
+   margin:0px 0px 0px 0px;
+ }
+ .divbar-generalmainpage ,#condition_classification_row > #condition_group_add {
+   margin:0px 0px 0px 0px;
+   width:100%;
+   height: 100%;
+ }
+
+
+ .divbar-generalmainpage ,#condition_classification_row > ul >li {
+   margin:0px 0px 0px 0px;
+ }
+
+ /*second part choose_group*/
+ .divbar-generalmainpage #condition_choosegroup{
+  width:50%;
+  display:block;margin:0 auto;
+  vertical-align:middle;
+  padding:0px 0px 0px 0px;
+}
+
+.divbar-generalmainpage #condition_choosegroup > ul > li{
+  width:100%;
+  height: 100%;
+}
+
+.divbar-generalmainpage #condition_classification_row > #condition_group_add > li{
+  margin:10px 0px 10px 0px;
+  padding: 5px 2px 5px 2px;
+  border: 7px ridge;
+  border-color:orange;
+  background:white;
+  width:100%;
+  height: 100%;
+}
+
+.divbar-generalmainpage #condition_classification_row > #condition_group_add > li > button{
+  width:100%;
+  vertical-align:middle;
+  margin: 3px 0px 3px 0px;
+
+}
+.divbar-generalmainpage #condition_classification_row > #condition_group_add > li > select{
+  width:100%;
+  display:block;
+  margin:0 auto;
+  vertical-align:middle;
+}
+.divbar-generalmainpage #condition_andor_button{
+  width: 100%;
+  margin:20px 0px 0px 0px;
+  vertical-align:middle;
+}
+
+/*Third_part choose_group by , order by */
+
+.divbar-generalmainpage #condition_groupby > ul{
+  width: 100%;
+  height: 100%;
+}
+.divbar-generalmainpage #condition_groupby > ul > li{
+  width: 100%;
+  height: 100%;
+}
+
+.divbar-generalmainpage #condition_orderby > ul{
+   width: 100%;
+   height: 100%;
+}
+.divbar-generalmainpage #condition_orderby > ul > li{
+   width: 100%;
+   height: 100%;
+}
+
+
+
+
+

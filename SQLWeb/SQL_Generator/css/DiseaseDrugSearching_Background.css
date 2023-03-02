@@ -1,0 +1,266 @@
+
+/*--------------------- Top - Choose Main Condition --------------------------*/
+#Top_row{
+  width:80%;
+  display:block;margin:0 auto;
+  vertical-align:middle;
+}
+.divbar-generaltop{
+  width:100%;
+  background-color:	#BBFF66;
+  color:#111111;
+  border:solid;
+  border-radius:10px;
+  padding:0px 0px 10px 0px;
+}
+
+.divbar-generaltop > .row{
+	text-align: center;
+}
+
+
+#Choose_Server ,#Choose_Year ,#Choose_Columns{
+	width:80%;
+	display:block;margin:0 auto;
+
+}
+
+#Choose_Server > li ,#Choose_Year > li,#Choose_Columns > li{
+	height: 100%;
+	background: #FF8888;
+	border:outset;
+	border-radius: 1px;
+}
+#Choose_Server > form ,#Choose_Year > form,#Choose_Columns>form{
+	height: 100%;
+	background: #FFFFBB;
+	border:outset;
+	border-radius: 1px;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*--------------------- Main Page - Choose Sick or Drug --------------------------*/
+#Main_row{
+  width:90%;
+  display:block;margin:0 auto;
+  vertical-align:middle;
+  border:none;
+}
+.divbar-generalmainpage{
+  width:100%;
+  background-color:	#AAFFEE;
+  color:#111111;
+  border:solid;
+  border-radius:10px;
+  padding:0px 0px 10px 0px;
+}
+.divbar-generalmainpage > .row{
+	text-align: center;
+}
+
+.divbar-generalmainpage > div > ul{
+	width: 100%;
+	display:block;
+	margin:0 auto;
+}
+
+.glyphicon-plus-sign{
+	font-size: 60px;
+}
+.glyphicon-plus{
+	font-size: 30px;
+}
+.btn-sq-lg {
+  width: 200px;
+  height: 150px;
+}
+#condition_place{
+    margin:0 auto;
+}
+#condition_place > li{
+	  height: 100%;
+    width:80%;
+    padding: 0px 0px 0px 0px;
+    border: solid;
+    float: none;
+    margin:0 auto 20px auto;
+}
+#condition_place > li > div{
+	height:100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    display: flex;/*set select text in middle*/
+    align-items: center;
+    justify-content: center;
+}
+
+#condition_place > li > form{
+    height: 100%;
+    margin:0px 0px 0px 0px;
+    vertical-align:middle;
+    cursor:pointer;
+    display: inline-block;
+}
+
+#condition_place > li > label{
+   height: 100%;
+   margin:5px 0px 0px 0px;
+   padding:  0px 0px 0px 0px;
+}
+#condition_place > li > label > input{
+	height: 20px;
+	width: 20px;
+	vertical-align:middle;
+
+}
+
+#condition_place > li > div > button{
+    height: 100%;
+    vertical-align: middle;
+    margin:0px 0px 2px 0px;
+    background-color: #FFCC22;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------Copy SQL & Analysis-----------------------------------------*/
+
+#AnalysisCheck_page{
+  margin-top: 20px;
+}
+
+#copytext,#directurl,#AnalysisCheck_text{
+  height: 100%;
+  width:100%;
+  vertical-align:middle;
+  background: #DDDDDD;
+  padding :10px 10px 5px 10px;
+
+}
+#copytext > h3,#directurl > h3,#AnalysisCheck_text > h3{
+  text-align: center;
+}
+#copybtn ,#AnalysisCheck_btn{
+  height: 100%;
+  width:100%;
+  vertical-align:middle;
+  background: #DDDDDD;
+  padding:10px 10px 10px 10px;
+}
+#copybtn > button, #AnalysisCheck_btn > div{
+  display: block;
+  margin:0 auto;
+  background:#AAAAAA;
+  border: solid;  
+}
+#AnalysisCheck_btn > img{
+    display: block;
+  margin:0 auto;
+  width:3%;
+  height: 3%;
+}
+
+
+
+#chartContainer_basic,#chartContainer_sex,#chartContainer_all,#chartContainer_age{
+  width:80%;
+  height:400px;
+  margin-top:20px;
+}
+
+#chartContainer_relation_left{
+  width:100%;
+  height:400px;
+  margin-top:20px;
+}
+#chartContainer_relation_left_border{
+  height:450px;
+  border-right:solid;
+}
+#chartContainer_relation_right{
+  width:100%;
+  height:400px;
+  margin-top:20px;
+}
+
+#Analysis_text{
+  height: 100%;
+  width:100%;
+  vertical-align:middle;
+  background:   #FFBB66;
+  padding :5px 10px 10px 10px;
+  margin : 20px 0px 0px 0px;
+  border: ridge ;
+  border-radius: 5px;
+}
+
+#Analysis_text > h3{
+  text-align: center;
+
+}
+
+
+/*********************************analysis_Basic & analysis_Relation ***********************************/
+#analysis_Basic > div > div > div > ul ,#analysis_Relation > div > div > div > ul{
+  text-align: center;
+  margin:0 auto;
+}
+#analysis_Basic > div > div > div > ul > li,#analysis_Relation > div > div > div > ul > li{
+  height:50px;
+  background: #FF8888;
+  border:outset;
+  border-radius: 1px;
+  margin-top:50px;
+}
+#analysis_Basic > div > div > div > ul > form,#analysis_Relation > div > div > div > ul > form{
+  height:50px;
+  background: #FFFFBB;
+  border:outset;
+  border-radius: 1px;
+  margin-top:50px;
+}
+#analysis_Basic > div > div > div > ul > form > select,#analysis_Relation > div > div > div > ul > form > select{
+  height:100%;
+}
+#analysis_Basic > div > div > div > ul > button,#analysis_Relation > div > div > div > ul > button{
+  height:50px;
+  border:outset;
+  border-radius: 1px;
+  background-color: #FFAA33;
+  margin-top:50px;
+}
+/***********************************************************************************/
+/**********************analysis_All & analysis_Sex & analysis_Age *****************/
+#analysis_Sex > div > div > div > ul , #analysis_All > div > div > div > ul , #analysis_Age > div > div > div > ul  {
+  text-align: center;
+  margin:0 auto;
+}
+#analysis_Sex > div > div > div > ul > li, #analysis_All > div > div > div > ul > li , #analysis_Age > div > div > div > ul > li{
+  height:50px;
+  background: #FF8888;
+  border:outset;
+  border-radius: 1px;
+
+}
+#analysis_Sex > div > div > div > ul > form,#analysis_All > div > div > div > ul > form,#analysis_Age > div > div > div > ul > form{
+  height:50px;
+  background: #FFFFBB;
+  border:outset;
+  border-radius: 1px;
+}
+#analysis_Sex > div > div > div > ul > form > select,#analysis_All > div > div > div > ul > form > select,#analysis_Age > div > div > div > ul > form > select{
+  height:100%;
+}
+#analysis_Sex > div > div > div > ul > button,#analysis_All > div > div > div > ul > button,#analysis_Age > div > div > div > ul > button{
+  height:50px;
+  border:outset;
+  border-radius: 1px;
+  background-color: #FFAA33;
+}
+
+
+/*************************************************************************************/
+
+
+/*-----------------------------------------------------------------------------------------------------*/
